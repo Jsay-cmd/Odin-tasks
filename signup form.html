@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+           background-color: rgb(249, 249, 249);
+           color: #0c0b0b;  
+           padding:70px;
+           padding-left:700px;
+           list-style:none;
+           justify-content: space-around;
+           align-items: center;
+           padding-top: 200px;
+           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }
+       .container .title{
+           font-size: 25px;
+           font-weight: 500;
+           position: relative;
+           padding-left: 642px;
+           font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }
+       .container form .user-details{
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: space-evenly;
+           margin: 20px 0 12px 0;
+           font-size: 30px;
+           padding-left: 30px;
+       }
+       form .user-details .input-box{
+          margin-bottom: 15px;
+           width: calc(100% / 2 - 20px);
+       }
+       .user-details .input-box .details{
+           display: block;
+           font-weight: 550;
+           margin-bottom: 5px;
+           padding-left: 2px;
+           font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+       }
+       .user-details .input-box input{
+           height: 45px;
+           width:40%;
+           outline: none;
+           border-radius: 5px;
+           border: 1px solid #ccc;
+           padding-left: 20px;
+           font-size: 25px;
+           border-bottom-width: 5px;
+           transition: all 0.3s ease;
+       }
+       .user-details .input-box input:focus,
+       .user-details .input-box input:valid{
+           border-color: blue;
+       }
+       input.error{
+        border-color: red;
+       } 
+       .error.message{
+       color: red;
+       font-size: 5px;
+       display: none; 
+       }
+       footer{
+            background-color: rgb(249, 249, 249);
+            color: #0c0b0b;  
+            padding: 70px;
+            padding-left:650px;
+            padding-bottom: 170px;
+            border-radius: 20px;
+        }
+        button{
+            background-color: rgb(20, 56, 20);
+            color: white;
+            width: 250px;
+            height: 70px;
+            border-radius: 20px;
+            font-size:larger;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+   </style>
+</head>
+<body>
+    <section id="sidebar-section">
+        <div class="sidebar">
+            <img src="img.jpeg/Greenleaf.jpg" alt="greenleaf" style="float: left;" width="600" height="1200">
+        </div>
+    </section>
+    <header>
+        
+         <h1>This is a not a real online service! You know you need something like this in your life to help you discover your deepest dreams.Sign up to get started.</h1>
+         <h2> You know you want to   </h2>  
+
+    </header>
+
+    <div class="container">
+        <div class="title"><h2>Let's do this!</h2></div>
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">FIRST NAME</span>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">LAST NAME</span>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">EMAIL</span>
+                    <input type="text" placeholder="Enter your email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">PHONE NUMBER</span>
+                    <input type="text" placeholder="Enter your number" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">PASSWORD</span>
+                    <input type="password" placeholder="Enter your password" error = "Password do not match" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">CONFIRM PASSWORD</span>
+                    <input type="password" id="password" placeholder="Confim your password" required>
+                </div>
+                
+
+            </div>
+        </form>
+    </div>
+    <footer>
+            <button type="submit">Create Account</button>
+            <h2>
+             Already have an account? Log in
+            </h2>
+        
+    </footer>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            var errorMessage = document.getElementById('Passwords dont match');
+            
+            if (password !== confirmPassword) {
+                errorMessage.style.display = 'block';
+                event.preventDefault();
+            } else {
+                errorMessage.style.display = 'none';
+            }
+        });
+    </script>
+    
+</body>
+</html>
